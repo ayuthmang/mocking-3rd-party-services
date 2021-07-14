@@ -10,18 +10,19 @@ on:
     branches: [ main ]
 
 jobs:
-  mocking-with-jest:
+  test:
 
     runs-on: ubuntu-latest
-    
-    defaults:
-      run:
-        working-directory: mocking-with-jest
 
     strategy:
       matrix:
         node-version: [12.x, 14.x, 16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    defaults:
+      run:
+        shell: bash
+        working-directory: mocking-with-jest
 
     steps:
     - uses: actions/checkout@v2
@@ -29,6 +30,6 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm install
-    - run: npm run test
+        cache: 'yarn'
+    - run: yarn ci
+    - run: yarn test

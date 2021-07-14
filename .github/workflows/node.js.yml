@@ -10,9 +10,18 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  my_first_job:
+    name: My first job
+  my_second_job:
+    name: My second job
+jobs:
+  mocking-with-jest:
 
     runs-on: ubuntu-latest
+    
+    defaults:
+      run:
+        working-directory: mocking-with-jest
 
     strategy:
       matrix:
@@ -26,6 +35,4 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: cd mocking-with-jest && npm ci; cd mocking-with-sinon && npm run ci;
-    - run: cd mocking-with-jest && npm run test
-    - run: cd mocking-with-sinon && npm run test
+    - run: npm run test

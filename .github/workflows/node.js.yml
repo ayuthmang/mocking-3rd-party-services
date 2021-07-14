@@ -26,5 +26,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: cd mocking-with-jest && npm run test npm test
-    - run: cd mocking-with-sinon && npm run test npm 
+    - run: cd mocking-with-jest && npm ci; cd mocking-with-sinon && npm run ci;
+    - run: cd mocking-with-jest && npm run test
+    - run: cd mocking-with-sinon && npm run test

@@ -8,23 +8,19 @@ beforeEach(() => {
 })
 
 test('get books', async () => {
-  axiosMock.get.mockResolvedValueOnce({
-    data: [
-      {
-        id: 1,
-        title:
-          'The Bitcoin Standard: The Decentralized Alternative to Central Banking',
-        author: 'Saifedean Ammous',
-      },
-    ],
-  })
-  const response = await getBooks()
-  expect(response.data).toEqual([
+  const books = [
     {
       id: 1,
       title:
         'The Bitcoin Standard: The Decentralized Alternative to Central Banking',
       author: 'Saifedean Ammous',
     },
-  ])
+  ]
+  axiosMock.get.mockResolvedValueOnce({
+    data: books,
+    status: 200,
+  })
+  const response = await getBooks()
+  expect(response.data).toEqual(books)
+  expect(response.status).toBe(200)
 })

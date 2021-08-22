@@ -15,24 +15,18 @@ describe('get books', () => {
   });
 
   it('gets books', async () => {
-    sandbox.stub(axios, 'get').resolves({
-      data: [
-        {
-          id: 1,
-          title:
-            'The Bitcoin Standard: The Decentralized Alternative to Central Banking',
-          author: 'Saifedean Ammous',
-        },
-      ],
-    });
-    const response = await getBooks();
-    assert.deepStrictEqual(response.data, [
+    const books = [
       {
         id: 1,
         title:
           'The Bitcoin Standard: The Decentralized Alternative to Central Banking',
         author: 'Saifedean Ammous',
       },
-    ]);
+    ];
+    sandbox.stub(axios, 'get').resolves({
+      data: books,
+    });
+    const response = await getBooks();
+    assert.deepStrictEqual(response, books);
   });
 });

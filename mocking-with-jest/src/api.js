@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export async function getBooks() {
-  return axios.get('https://some-books-url.xyz')
+  return (await axios.get('https://some-books-url.xyz')).data
 }

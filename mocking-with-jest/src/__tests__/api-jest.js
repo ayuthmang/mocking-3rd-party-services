@@ -18,6 +18,7 @@ test('get books', async () => {
   ]
   axiosMock.get.mockResolvedValueOnce({
     data: books,
+    status: 200,
   })
   const response = await getBooks()
   expect(response).toEqual(books)

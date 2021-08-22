@@ -25,6 +25,7 @@ describe('get books', () => {
     ];
     sandbox.stub(axios, 'get').resolves({
       data: books,
+      status: 200,
     });
     const response = await getBooks();
     assert.deepStrictEqual(response, books);

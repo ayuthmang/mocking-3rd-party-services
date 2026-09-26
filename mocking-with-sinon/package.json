@@ -7,13 +7,32 @@
     "test": "mocha --require @babel/register test"
   },
   "dependencies": {
-    "axios": "^0.21.1"
+    "axios": "^0.33.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.6",
-    "@babel/preset-env": "^7.14.7",
+    "@babel/core": "^7.29.6",
+    "@babel/preset-env": "^7.29.7",
     "@babel/register": "^7.14.5",
-    "mocha": "^9.0.1",
+    "mocha": "^12.0.2",
     "sinon": "^11.1.1"
+  },
+  "resolutions": {
+    "minimatch": "^3.1.4",
+    "nanoid": "^3.3.18",
+    "diff": "^5.2.2",
+    "js-yaml": "^4.3.2",
+    "follow-redirects": "^1.16.0",
+    "json5": "^2.2.2",
+    "minimist": "^1.2.6",
+    "braces": "^3.0.3",
+    "path-to-regexp": "^1.9.0",
+    "@babel/runtime": "^7.26.10",
+    "@babel/helpers": "^7.26.10",
+    "brace-expansion": "^1.1.18",
+    "picomatch": "^2.3.2",
+    "@babel/traverse": "^7.23.2",
+    "@babel/plugin-transform-modules-systemjs": "^7.29.4",
+    "browserslist": "^4.28.7",
+    "@babel/register/**/semver": "^5.7.2"
   }
 }
